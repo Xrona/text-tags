@@ -30,6 +30,10 @@ export default {
       type: String,
       default: 'left',
     },
+    heightWrapper: {
+      type: String,
+      default: '',
+    },
   },
 
   data() {
@@ -38,6 +42,12 @@ export default {
       iconName: '',
       lines: 0,
     }
+  },
+
+  watch: {
+    heightWrapper() {
+      this.countLines()
+    },
   },
 
   mounted() {
@@ -55,10 +65,11 @@ export default {
 
   methods: {
     countLines() {
-      const p = this.$refs.tagList
-      const height = p.getBoundingClientRect()?.height ?? 0
+      const wrapper = this.$refs.tagList.parentNode
+      const height = wrapper.getBoundingClientRect()?.height ?? 0
+      console.log(height, Math.floor(height / 22))
 
-      this.lines = Math.floor(height / 15)
+      this.lines = Math.floor(height / 24)
     },
   },
 }

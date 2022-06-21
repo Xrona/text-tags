@@ -23,15 +23,15 @@
 
 .tag-list {
   --lines: 99;
+  height: calc(24px * var(--lines));
   word-break: keep-all;
-  max-height: 100%;
   overflow: hidden;
-  height: 100%;
   position: relative;
   display: -webkit-box;
   text-overflow: clip;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--lines);
+  line-height: var(--line-height);
 
   &__item {
     line-height: var(--line-height);

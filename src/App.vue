@@ -10,7 +10,11 @@
           @setHeight="heightHandler1"
           @setAlign="alignHandler1"
         >
-          <tag-list :items="$options.items" :align="align1" />
+          <tag-list
+            :items="$options.items"
+            :align="align1"
+            :heightWrapper="height1"
+          />
         </wrapper-item>
         <wrapper-item
           :width="width2"
@@ -20,7 +24,11 @@
           @setHeight="heightHandler2"
           @setAlign="alignHandler2"
         >
-          <tag-list :items="$options.items" :align="align2" />
+          <tag-list
+            :items="$options.items"
+            :align="align2"
+            :heightWrapper="height2"
+          />
         </wrapper-item>
         <wrapper-item
           :width="width3"
@@ -30,7 +38,11 @@
           @setHeight="heightHandler3"
           @setAlign="alignHandler3"
         >
-          <tag-list :items="$options.items" :align="align3" />
+          <tag-list
+            :items="$options.items"
+            :align="align3"
+            :heightWrapper="height3"
+          />
         </wrapper-item>
       </v-container>
     </v-main>
@@ -47,14 +59,14 @@ export default {
 
   data() {
     return {
-      width1: 300,
-      height1: 200,
+      width1: '300',
+      height1: '200',
       align1: 'left',
-      width2: 600,
-      height2: 400,
+      width2: '600',
+      height2: '400',
       align2: 'left',
-      width3: 800,
-      height3: 300,
+      width3: '800',
+      height3: '300',
       align3: 'left',
     }
   },

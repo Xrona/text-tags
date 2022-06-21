@@ -31,11 +31,11 @@ export default {
 
   props: {
     width: {
-      type: Number,
+      type: String,
       required: true,
     },
     height: {
-      type: Number,
+      type: String,
       required: true,
     },
     align: {
@@ -50,7 +50,7 @@ export default {
         return this.width
       },
       set(value) {
-        this.$emit('setWidth', this.convertValue(value))
+        this.$emit('setWidth', value)
       },
     },
     heightContent: {
@@ -58,7 +58,7 @@ export default {
         return this.height
       },
       set(value) {
-        this.$emit('setHeight', this.convertValue(value))
+        this.$emit('setHeight', value)
       },
     },
     alignContent: {
@@ -72,14 +72,6 @@ export default {
   },
 
   methods: {
-    convertValue(value) {
-      if (isNaN(parseInt(value))) {
-        return 0
-      }
-
-      return value
-    },
-
     setAlign(value) {
       this.alignContent = value
     },
