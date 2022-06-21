@@ -1,0 +1,63 @@
+:root {
+  --line-height: 15px;
+}
+
+.v-application p {
+  margin-bottom: 0;
+}
+
+.wrapper {
+  margin-bottom: 60px;
+
+  &__options {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  &__object {
+    overflow: hidden;
+  }
+}
+
+.tag-list {
+  --lines: 99;
+  word-break: keep-all;
+  max-height: 100%;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  text-overflow: clip;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--lines);
+
+  &__item {
+    line-height: var(--line-height);
+    white-space: nowrap;
+  }
+
+  &__name {
+    line-height: var(--line-height);
+  }
+
+  &__icon {
+    position: relative;
+    padding-right: 3px;
+    height: var(--line-height);
+    color: black;
+    padding-right: 24px;
+
+    .v-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: black;
+    }
+  }
+}
+
+.justify {
+  text-align: justify;
+}
